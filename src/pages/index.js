@@ -1,0 +1,5 @@
+export {default as Homepage} from './Homepage'
+export {default as News} from './NewsPage'
+export {default as ExchangesPage} from './ExchangesPage'
+export {default as CryptocurrenciePage} from './CryptocurrenciePage'
+export {default as CryptoDetailPage} from './CryptoDetailPage'

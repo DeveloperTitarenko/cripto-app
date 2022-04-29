@@ -5,13 +5,16 @@ const cryptoApiHeaders = {
 };
 
 const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
-
+const queryString = new URLSearchParams({
+  'x-access-token': "coinranking9c2f9aad9dce24d86f691a951346eb95081cad484343bfb4",
+  search: 'Bit',
+});
 export const cryptoApi = createApi({
   reducerPath: 'cryptoApi',
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_CRYPTO_API_URL }),
   endpoints: (builder) => ({
     getCryptos: builder.query({
-      query: (count) => createRequest(`/coins?limit=${count}`),
+      query: (count) => createRequest(`/coins?limit=${count}&${queryString}`),
     }),
     getExchanges: builder.query({
       query: () => createRequest('/exchanges'),
